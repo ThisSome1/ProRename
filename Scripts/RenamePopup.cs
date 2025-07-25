@@ -5,15 +5,20 @@ using System.IO;
 
 namespace ThisSome1.ProRename
 {
-    public class RenamePopup : PopupWindowContent
+    internal class RenamePopup : PopupWindowContent
     {
-        private static readonly Vector2 WindowSize = new(200, 50);
+        #region Fields
+        internal static readonly Vector2 WindowSize = new(200, 50);
         private string _newName;
         private GameObject[] _targetGOs;
         private string[] _targetGUIDs;
+        #endregion
 
+        #region Properties
         private int RenamingObjectsCount => _targetGOs.Length > 0 ? _targetGOs.Length : _targetGUIDs.Length;
+        #endregion
 
+        #region Methods
         public RenamePopup(GameObject[] targets)
         {
             _targetGOs = targets;
@@ -26,26 +31,6 @@ namespace ThisSome1.ProRename
             _targetGOs = new GameObject[0];
             string assetPath = AssetDatabase.GUIDToAssetPath(targets[0]);
             _newName = AssetDatabase.IsValidFolder(assetPath) ? Path.GetFileName(assetPath) : Path.GetFileNameWithoutExtension(assetPath);
-        }
-
-        [MenuItem("GameObject/ThisSome1/Pro Rename", true), MenuItem("Assets/ThisSome1/Pro Rename", true)]
-        private static bool AnySelected() => Selection.gameObjects.Length > 0 || Selection.assetGUIDs.Length > 0;
-        [MenuItem("GameObject/ThisSome1/Pro Rename", false), MenuItem("Assets/ThisSome1/Pro Rename", false)]
-        private static void RenameSelected(MenuCommand cmd)
-        {
-            if (cmd.context && cmd.context != Selection.activeObject)
-                return;
-
-            Vector2 mousePos;
-            var fw = EditorWindow.focusedWindow;
-            if (EditorWindow.focusedWindow)
-            {
-                Rect windowRect = EditorWindow.focusedWindow.position;
-                mousePos = new Vector2(windowRect.x + windowRect.width / 2 - WindowSize.x / 2, windowRect.y + windowRect.height / 2 - WindowSize.y / 2 - 50);
-            }
-            else
-                mousePos = new(Screen.width / 2, Screen.height / 2 - 25);
-            PopupWindow.Show(new(GUIUtility.ScreenToGUIPoint(mousePos), WindowSize), Selection.gameObjects.Length > 0 ? new RenamePopup(Selection.gameObjects) : new RenamePopup(Selection.assetGUIDs));
         }
 
         public override Vector2 GetWindowSize() => WindowSize;
@@ -118,4 +103,5 @@ namespace ThisSome1.ProRename
             return generated;
         }
     }
+    #endregion
 }
