@@ -1,0 +1,26 @@
+{
+    "name": "com.thissome1.pro-rename",
+    "version": "1.0.0",
+    "displayName": "Pro Rename",
+    "description": "Rename easy and fast, multiple gameObjects and assets.\nRename by pattern and many more options.",
+    "unity": "2022.3",
+    "category": "Tool",
+    "type": "tool",
+    "keywords": [
+        "ThisSome1",
+        "EditorTools",
+        "Editor",
+        "Tools",
+        "Rename"
+    ],
+    "_upm": {
+        "changelog": "Initial release"
+    },
+    "licensesUrl": "https://github.com/ThisSome1/ProRename/blob/main/LICENSE.md",
+    "changelogUrl": "https://github.com/ThisSome1/ProRename/blob/main/CHANGELOG.md",
+    "documentationUrl": "https://github.com/ThisSome1/ProRename/blob/main/README.md",
+    "author": {
+        "name": "ThisSome1",
+        "email": "h.behroozib4u@gmail.com"
+    }
+}
