@@ -1,7 +1,7 @@
-using UnityEditor;
-using UnityEditor.SearchService;
+#if UNITY_EDITOR
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
+using UnityEditor;
 
 namespace ThisSome1.ProRename
 {
@@ -65,3 +65,4 @@ namespace ThisSome1.ProRename
         #endregion
     }
 }
+#endif

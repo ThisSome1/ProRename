@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
@@ -105,3 +106,4 @@ namespace ThisSome1.ProRename
     }
     #endregion
 }
+#endif
