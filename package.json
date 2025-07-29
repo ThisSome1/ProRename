@@ -1,6 +1,6 @@
 {
     "name": "com.thissome1.pro-rename",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "displayName": "Pro Rename",
     "description": "Rename easy and fast, multiple gameObjects and assets.\nRename by pattern and many more options.",
     "unity": "2022.3",
@@ -14,7 +14,7 @@
         "Rename"
     ],
     "_upm": {
-        "changelog": "Fixed:\n\tFixed build errors."
+        "changelog": "Fixed:\n\tFixed scripts not being in \"Editor\" folder."
     },
     "licensesUrl": "https://github.com/ThisSome1/ProRename/blob/main/LICENSE.md",
     "changelogUrl": "https://github.com/ThisSome1/ProRename/blob/main/CHANGELOG.md",
